@@ -13,12 +13,11 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 @ComponentScan(basePackages = {"app"})
 public class AppWebConfig extends WebMvcConfigurerAdapter{
-
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		// TODO Auto-generated method stub
-		super.addResourceHandlers(registry);
+		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
+	
 	@Bean
 	public ViewResolver getvr(){
 		InternalResourceViewResolver vr = new InternalResourceViewResolver();
